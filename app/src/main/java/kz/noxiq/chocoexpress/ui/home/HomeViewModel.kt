@@ -13,6 +13,7 @@ class HomeViewModel
 ) : ViewModel() {
 
     private val restaurantsLiveData = MutableLiveData<List<Restaurant>>()
+
     fun getRestaurantsLiveData(): LiveData<List<Restaurant>> = restaurantsLiveData
 
     init {
