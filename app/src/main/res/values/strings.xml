@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">chocoExpress</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="home">Главная</string>
+    <string name="orders">Мои заказы</string>
+    <string name="rahmet">Рахмет</string>
+    <string name="takeout_order">Заказ с собой</string>
+
 </resources>

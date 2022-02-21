@@ -1,4 +1,4 @@
-package kz.noxiq.chocoexpress
+package kz.noxiq.chocoexpress.ui.utils
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData

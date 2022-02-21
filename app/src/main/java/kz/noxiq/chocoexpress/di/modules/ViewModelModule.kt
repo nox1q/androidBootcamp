@@ -7,6 +7,7 @@ import dagger.MapKey
 import dagger.Module
 import dagger.multibindings.IntoMap
 import kz.noxiq.chocoexpress.ui.home.HomeViewModel
+import kz.noxiq.chocoexpress.ui.home.menu.MenuViewModel
 import kotlin.reflect.KClass
 
 @Suppress("unused")
@@ -17,6 +18,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(HomeViewModel::class)
     abstract fun bindHomeViewModel(homeViewModel: HomeViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MenuViewModel::class)
+    abstract fun bindMenuViewModel(menuViewModel: MenuViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

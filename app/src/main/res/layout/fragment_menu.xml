@@ -8,9 +8,9 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/bottom_navigation_view_height"
+        android:layout_height="wrap_content"
         android:background="@color/white"
-        android:elevation="12dp"
+        android:elevation="@dimen/dp_10"
         android:theme="@style/ThemeOverlay.AppCompat.Light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,28 +20,15 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="@dimen/dp_0"
+            android:elevation="0dp"
             android:theme="@style/ThemeOverlay.MaterialComponents.Light"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
-            app:title="@string/takeout_order"
-            app:titleTextColor="@color/text_color">
+            app:titleTextColor="@color/text_color"
+            tools:title="title">
 
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingTop="@dimen/dp_4"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
-        tools:listitem="@layout/view_holder_restaurant">
-
-    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
