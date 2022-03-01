@@ -11,4 +11,8 @@ abstract class FragmentBuildersModule {
     @ContributesAndroidInjector
     abstract fun contributeHomeFragment(): HomeFragment
 
+    @ContributesAndroidInjector
+    abstract fun contributeOrdersFragment(): HomeFragment
+
+
 }
