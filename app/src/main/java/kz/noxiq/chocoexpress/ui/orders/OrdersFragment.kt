@@ -25,7 +25,7 @@ class OrdersFragment : DaggerFragment(R.layout.fragment_orders) {
     }
 
     private val ordersAdapter: OrdersAdapter by lazy {
-        OrdersAdapter(::navigateToOrderDeatails)
+        OrdersAdapter(::navigateToOrderDetails)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,7 +37,6 @@ class OrdersFragment : DaggerFragment(R.layout.fragment_orders) {
     }
 
     private fun observeViewModel() {
-
         viewModel.getOrdersLiveData().observe(
             viewLifecycleOwner, ordersAdapter::submitList)
     }
@@ -46,8 +45,8 @@ class OrdersFragment : DaggerFragment(R.layout.fragment_orders) {
         binding.rvOrders.adapter = ordersAdapter
     }
 
-    private fun navigateToOrderDeatails(orderId: Long) {
+    private fun navigateToOrderDetails(orderId: Long) {
         // логика findNavController
-        Log.d("test", "test")
+        Log.d("test", "Orders test")
     }
 }

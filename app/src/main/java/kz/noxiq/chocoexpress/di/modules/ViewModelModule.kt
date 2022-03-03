@@ -7,6 +7,7 @@ import dagger.MapKey
 import dagger.Module
 import dagger.multibindings.IntoMap
 import kz.noxiq.chocoexpress.ui.home.HomeViewModel
+import kz.noxiq.chocoexpress.ui.orders.OrdersViewModel
 import kotlin.reflect.KClass
 
 @Suppress("unused")
@@ -17,6 +18,13 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(HomeViewModel::class)
     abstract fun bindHomeViewModel(homeViewModel: HomeViewModel): ViewModel
+
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(OrdersViewModel::class)
+    abstract fun bindOrdersViewModel(ordersViewModel: OrdersViewModel): ViewModel
+
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

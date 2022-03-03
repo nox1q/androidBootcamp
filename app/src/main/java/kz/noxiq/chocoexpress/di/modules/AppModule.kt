@@ -8,4 +8,5 @@ import dagger.Module
         DataModule::class
     ]
 )
+
 class AppModule

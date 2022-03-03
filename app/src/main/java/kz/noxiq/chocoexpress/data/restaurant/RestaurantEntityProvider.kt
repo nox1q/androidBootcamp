@@ -1,4 +1,4 @@
-package kz.noxiq.chocoexpress.data
+package kz.noxiq.chocoexpress.data.restaurant
 
 private const val PAGE_SIZE = 20
 

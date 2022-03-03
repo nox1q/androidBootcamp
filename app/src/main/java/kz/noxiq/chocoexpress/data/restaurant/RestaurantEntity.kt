@@ -1,4 +1,4 @@
-package kz.noxiq.chocoexpress.data
+package kz.noxiq.chocoexpress.data.restaurant
 
 data class RestaurantEntity(
     val id: Long?,
