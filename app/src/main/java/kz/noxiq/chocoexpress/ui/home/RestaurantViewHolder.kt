@@ -1,11 +1,9 @@
 package kz.noxiq.chocoexpress.ui.home
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kz.noxiq.chocoexpress.databinding.ViewHolderRestaurantBinding
-import kz.noxiq.chocoexpress.domain.Restaurant
-import kotlin.coroutines.coroutineContext
+import kz.noxiq.chocoexpress.domain.restaurant.Restaurant
 
 class RestaurantViewHolder(
     private val binding: ViewHolderRestaurantBinding,
@@ -16,8 +14,8 @@ class RestaurantViewHolder(
         with(binding) {
             tvRestaurantName.text = restaurant.name
             tvRestaurantAddress.text = restaurant.address
-            Glide.with(ivRestaurantPhoto.context)
-                .load(restaurant.photoUrl)
+            Glide.with(binding.root)
+                .load(restaurant.imageUrl)
                 .into(ivRestaurantPhoto)
 
             root.setOnClickListener {

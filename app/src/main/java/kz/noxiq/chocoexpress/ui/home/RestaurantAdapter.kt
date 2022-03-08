@@ -4,9 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import kz.noxiq.chocoexpress.R
 import kz.noxiq.chocoexpress.databinding.ViewHolderRestaurantBinding
-import kz.noxiq.chocoexpress.domain.Restaurant
+import kz.noxiq.chocoexpress.domain.restaurant.Restaurant
 
 class RestaurantAdapter(
     private val onRestaurantClicked: (Long) -> Unit

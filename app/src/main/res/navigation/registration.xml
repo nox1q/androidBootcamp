@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registration"
+    app:startDestination="@id/emailFragment">
+
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="kz.noxiq.chocoexpress.ui.registration.EmailFragment"
+        android:label="EmailFragment"
+        tools:layout="@layout/fragment_email">
+        <action
+            android:id="@+id/action_emailFragment_to_passwordFragment"
+            app:destination="@id/passwordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="kz.noxiq.chocoexpress.ui.registration.PasswordFragment"
+        android:label="PasswordFragment"
+        tools:layout="@layout/fragment_password">
+
+    </fragment>
+
+</navigation>

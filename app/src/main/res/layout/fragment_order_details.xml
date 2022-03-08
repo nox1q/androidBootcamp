@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+        app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
+        app:title="@string/order_details"
+        app:titleTextColor="@color/text_color" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_order_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_restaurant_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_0"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="ChocoCafe" />
+
+                    <TextView
+                        android:id="@+id/tv_restaurant_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_0"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_restaurant_name"
+                        tools:text="1.2 км • Коктем 3-й микрорайон " />
+
+                    <View
+                        android:id="@+id/view_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:background="@color/divider_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_restaurant_address" />
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:text="@string/order_status"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_divider" />
+
+                    <TextView
+                        android:id="@+id/tv_order_status"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:textColor="@color/status_in_progress"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_status"
+                        tools:text="Завершен" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:text="@string/date"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_order_status" />
+
+                    <TextView
+                        android:id="@+id/tv_order_date"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:textColor="@color/text_color"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_date"
+                        tools:text="22.04.2021, 12:43" />
+
+                    <TextView
+                        android:id="@+id/order_number"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:text="@string/order_number"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_order_date" />
+
+                    <TextView
+                        android:id="@+id/tv_order_number"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:paddingBottom="@dimen/dp_16"
+                        android:textColor="@color/text_color"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/order_number"
+                        tools:text="№3161389" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_order_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_order_status">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_items_in_order"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:text="@string/items_in_order"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_products"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_items_in_order"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/view_holder_order_detail" />
+
+                    <View
+                        android:id="@+id/view_divider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:background="@color/divider_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rv_products" />
+
+                    <TextView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:paddingBottom="@dimen/dp_16"
+                        android:text="@string/total"
+                        android:textColor="@color/text_color"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/tv_total_price"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_divider2" />
+
+                    <TextView
+                        android:id="@+id/tv_total_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:textColor="@color/text_color"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_divider2"
+                        tools:text="6 900 тг" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

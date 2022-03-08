@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/menuFragment"
+    android:id="@+id/menu">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="kz.noxiq.chocoexpress.ui.home.menu.MenuFragment"
+        android:label="MenuFragment"
+        tools:layout="@layout/fragment_menu">
+        <argument
+            android:name="restaurantId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_menuFragment_to_menuCategoryNamesFragment"
+            app:destination="@id/menuCategoryNamesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menuCategoryNamesFragment"
+        android:name="kz.noxiq.chocoexpress.ui.home.menu_category_name.MenuCategoryNamesFragment"
+        android:label="MenuCategoryNamesFragment"
+        tools:layout="@layout/fragment_category_names">
+
+    </fragment>
+
+</navigation>

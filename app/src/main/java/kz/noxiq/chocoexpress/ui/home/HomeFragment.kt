@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import dagger.android.support.DaggerFragment
 import kz.noxiq.chocoexpress.R
@@ -37,9 +38,7 @@ class HomeFragment : DaggerFragment(R.layout.fragment_home) {
 
     private fun observeViewModel() {
 
-        viewModel.getRestaurantsLiveData().observe(
-            viewLifecycleOwner, restaurantAdapter::submitList
-        )
+        viewModel.getRestaurantsLiveData().observe(viewLifecycleOwner, restaurantAdapter::submitList)
     }
 
     private fun bindAdapter() {
@@ -57,8 +56,7 @@ class HomeFragment : DaggerFragment(R.layout.fragment_home) {
 
     private fun navigateToRestaurantMenu(restaurantId: Long) {
         findNavController().navigate(
-            HomeFragmentDirections.actionHomeFragmentToMenuFragment(restaurantId)
+            HomeFragmentDirections.actionHomeFragmentToMenu(restaurantId)
         )
-        Log.d("test", "test")
     }
 }

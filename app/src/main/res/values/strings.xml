@@ -5,5 +5,30 @@
     <string name="orders">Мои заказы</string>
     <string name="rahmet">Рахмет</string>
     <string name="takeout_order">Заказ с собой</string>
-
+    <string name="menu">Меню</string>
+    <string name="cart">Корзина</string>
+    <string name="my_order">Мой заказ</string>
+    <string name="total">Итого</string>
+    <string name="status">Статус - </string>
+    <string name="order_details">Детали заказа</string>
+    <string name="order_status">Статус заказа</string>
+    <string name="date">Дата</string>
+    <string name="order_number">Номер заказа</string>
+    <string name="items_in_order">Позиции в заказе</string>
+    <string name="login_into_account">Войдите в свой аккаунт</string>
+    <string name="login">Войти</string>
+    <string name="login_info">Необходимо войти в свой аккаунт, чтобы увидеть историю заказов</string>
+    <string name="registration">Регистрация</string>
+    <string name="enter_email">Введите ваш почтовый адрес</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="password_rule">Пароль должен состоять минимум из 9 символов</string>
+    <string name="email">e-mail</string>
+    <string name="password">Пароль</string>
+    <string name="auth_hint_email">Введите почтовый адрес</string>
+    <string name="next">Далее</string>
+    <string name="disclaimer">Нажимая  “Далее”, вы принимаете</string>
+    <string name="disclaimer_2"><u>условия публичной оферты</u></string>
+    <string name="sign_in">Войти</string>
+    <string name="enter_email_password">Введите почтовый адрес и пароль</string>
+    <string name="create_account"><u>Создать аккаунт</u></string>
 </resources>
