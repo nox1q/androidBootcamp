@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_email">
         <action
             android:id="@+id/action_emailFragment_to_passwordFragment"
-            app:destination="@id/passwordFragment" />
+            app:destination="@id/passwordFragment">
+        </action>
+
     </fragment>
 
     <fragment
@@ -20,7 +22,9 @@
         android:name="kz.noxiq.chocoexpress.ui.registration.PasswordFragment"
         android:label="PasswordFragment"
         tools:layout="@layout/fragment_password">
-
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
 
 </navigation>

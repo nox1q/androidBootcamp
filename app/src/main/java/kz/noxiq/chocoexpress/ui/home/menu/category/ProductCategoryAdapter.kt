@@ -1,23 +1,45 @@
 package kz.noxiq.chocoexpress.ui.home.menu.category
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import kz.noxiq.chocoexpress.databinding.ViewHolderProductCategoryBinding
 import kz.noxiq.chocoexpress.domain.menu.model.ProductCategory
+import kz.noxiq.chocoexpress.domain.menu.model.ProductCountUpdate
 
-class ProductCategoryAdapter: ListAdapter<ProductCategory, ProductCategoryViewHolder>(DiffUtilCallback) {
+class ProductCategoryAdapter(
+    private val onProductCountChangeClicked: (ProductCountUpdate) -> Unit
+): ListAdapter<ProductCategory, ProductCategoryViewHolder>(DiffUtilCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductCategoryViewHolder {
         val binding =
             ViewHolderProductCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return ProductCategoryViewHolder(binding)
+        return ProductCategoryViewHolder(binding, onProductCountChangeClicked)
     }
 
     override fun onBindViewHolder(holder: ProductCategoryViewHolder, position: Int) {
         holder.onBind(getItem(position))
+    }
+
+    override fun onBindViewHolder(
+        holder: ProductCategoryViewHolder,
+        position: Int,
+        payloads: MutableList<Any>
+    ) {
+        if (payloads.isEmpty()) {
+            super.onBindViewHolder(holder, position, payloads)
+
+            return
+        }
+
+        for (payload in payloads) {
+            if (payload is ProductCountUpdate) {
+                holder.bindProductCountUpdate(payload)
+            }
+        }
     }
 }
 

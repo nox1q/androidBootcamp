@@ -1,6 +1,5 @@
 package kz.noxiq.chocoexpress.di.modules
 
-import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
@@ -10,8 +9,8 @@ import dagger.multibindings.IntoMap
 import kz.noxiq.chocoexpress.ui.home.HomeViewModel
 import kz.noxiq.chocoexpress.ui.home.menu.MenuViewModel
 import kz.noxiq.chocoexpress.ui.orders.OrdersViewModel
-import kz.noxiq.chocoexpress.ui.rahmet.LoginViewModel
-import kz.noxiq.chocoexpress.ui.rahmet.RahmetViewModel
+import kz.noxiq.chocoexpress.ui.login.LoginViewModel
+import kz.noxiq.chocoexpress.ui.login.RahmetViewModel
 import kz.noxiq.chocoexpress.ui.registration.RegistrationViewModel
 import kotlin.reflect.KClass
 

@@ -1,8 +1,10 @@
 package kz.noxiq.chocoexpress.ui.registration
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import dagger.android.support.DaggerFragment
@@ -29,8 +31,11 @@ class EmailFragment : DaggerFragment(R.layout.fragment_email) {
 
     private fun navigateToPasswordFragment() {
         binding.buttonLogin.setOnClickListener {
+            val navBuilder = NavOptions.Builder()
+            navBuilder.setPopUpTo(R.id.loginFragment,true)
             findNavController().navigate(
-                EmailFragmentDirections.actionEmailFragmentToPasswordFragment()
+                EmailFragmentDirections.actionEmailFragmentToPasswordFragment(binding.etEmail.text.toString()),
+                navBuilder.build()
             )
         }
     }

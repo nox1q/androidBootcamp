@@ -1,8 +1,10 @@
 package kz.noxiq.chocoexpress.data.auth.repository
 
+import kz.noxiq.chocoexpress.data.EMPTY_STRING
 import kz.noxiq.chocoexpress.data.auth.AuthSharedPrefs
 import kz.noxiq.chocoexpress.data.auth.api.AuthApi
 import kz.noxiq.chocoexpress.data.auth.model.AuthResultEntity
+import kz.noxiq.chocoexpress.data.auth.model.RegisterResultEntity
 import kz.noxiq.chocoexpress.data.util.BaseResponse
 import kz.noxiq.chocoexpress.domain.auth.AuthRepository
 import kz.noxiq.common.Response
@@ -42,5 +44,14 @@ class BaseAuthRepository(
 
     override fun isLoggedIn(): Boolean {
         return authSharedPrefs.getAuthToken().isNotBlank()
+    }
+
+    override fun register(email: String, password: String): Response<String, Exception> {
+        val response: Response<RegisterResultEntity, Exception> =
+            authApi.register(email, password).executeCall()
+        return when (response) {
+            is Response.Success -> Response.Success(EMPTY_STRING)
+            is Response.Error -> response
+        }
     }
 }

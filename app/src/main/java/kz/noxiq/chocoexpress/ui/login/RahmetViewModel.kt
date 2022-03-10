@@ -1,4 +1,4 @@
-package kz.noxiq.chocoexpress.ui.rahmet
+package kz.noxiq.chocoexpress.ui.login
 
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject

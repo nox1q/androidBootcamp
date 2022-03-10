@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_menuFragment_to_menuCategoryNamesFragment"
             app:destination="@id/menuCategoryNamesFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_stashFragment"
+            app:destination="@id/stashFragment" />
     </fragment>
 
     <fragment
@@ -24,6 +27,13 @@
         android:label="MenuCategoryNamesFragment"
         tools:layout="@layout/fragment_category_names">
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/stashFragment"
+        android:name="kz.noxiq.chocoexpress.ui.home.stash.StashFragment"
+        android:label="StashFragment"
+        tools:layout="@layout/fragment_stash">
     </fragment>
 
 </navigation>

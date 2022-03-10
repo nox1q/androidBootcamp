@@ -1,6 +1,8 @@
-package kz.noxiq.chocoexpress.ui.rahmet
+package kz.noxiq.chocoexpress.ui.login
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -9,7 +11,6 @@ import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_menu.*
 import kz.noxiq.chocoexpress.R
 import kz.noxiq.chocoexpress.databinding.FragmentLoginBinding
-import kz.noxiq.chocoexpress.ui.home.HomeViewModel
 import javax.inject.Inject
 
 class LoginFragment : DaggerFragment(R.layout.fragment_login) {
@@ -40,6 +41,7 @@ class LoginFragment : DaggerFragment(R.layout.fragment_login) {
                     email = etEmail.text.toString(),
                     password = etPassword.text.toString()
                 )
+                findNavController().popBackStack()
             }
         }
     }
@@ -55,4 +57,5 @@ class LoginFragment : DaggerFragment(R.layout.fragment_login) {
             findNavController().popBackStack()
         }
     }
+
 }

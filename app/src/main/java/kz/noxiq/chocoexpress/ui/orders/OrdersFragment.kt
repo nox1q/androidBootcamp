@@ -29,7 +29,7 @@ class OrdersFragment : DaggerFragment(R.layout.fragment_orders) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentOrdersBinding.bind(view)
-
+        binding.rvOrders.adapter = orderAdapter
         viewModel.onStart()
         observeViewModel()
         setupListeners()
@@ -68,6 +68,7 @@ class OrdersFragment : DaggerFragment(R.layout.fragment_orders) {
     }
 
     private fun onOrderClicked(order: Order) {
+        viewModel.onOrderClicked(order)
         navigateToOrderDetails()
     }
 

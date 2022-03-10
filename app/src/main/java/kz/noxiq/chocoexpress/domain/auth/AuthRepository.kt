@@ -11,4 +11,6 @@ interface AuthRepository {
     fun saveAccessToken(accessToken: String)
 
     fun isLoggedIn(): Boolean
+
+    fun register(email: String, password: String): Response<String, Exception>
 }

@@ -1,6 +1,7 @@
 package kz.noxiq.chocoexpress.ui.home.menu_category_name
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -19,6 +20,8 @@ import kz.noxiq.chocoexpress.ui.home.menu.MenuFragmentArgs
 import kz.noxiq.chocoexpress.ui.home.menu.MenuViewModel
 import kz.noxiq.chocoexpress.ui.home.menu.category.ProductCategoryAdapter
 import kz.noxiq.chocoexpress.ui.home.menu.category_name.CategoryNameAdapter
+import kz.noxiq.chocoexpress.ui.utils.formatPrice
+import kz.noxiq.chocoexpress.ui.utils.getDividerItemDecoration
 import javax.inject.Inject
 
 class MenuCategoryNamesFragment : DaggerFragment(R.layout.fragment_category_names) {
@@ -34,9 +37,22 @@ class MenuCategoryNamesFragment : DaggerFragment(R.layout.fragment_category_name
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentCategoryNamesBinding.bind(view)
-        binding.rvCategoryNames.adapter = adapter
+
         observeViewModel()
         setupToolbar()
+        setupAdapter()
+    }
+
+    private fun setupAdapter() {
+
+        with(binding) {
+            rvCategoryNames.adapter = adapter
+            rvCategoryNames.addItemDecoration(
+                getDividerItemDecoration(
+                    context = requireContext()
+                )
+            )
+        }
     }
 
     private fun observeViewModel() {

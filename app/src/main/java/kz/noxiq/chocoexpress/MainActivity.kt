@@ -1,12 +1,15 @@
 package kz.noxiq.chocoexpress
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.navigation.NavController
 import dagger.android.support.DaggerAppCompatActivity
 import kz.noxiq.chocoexpress.databinding.ActivityMainBinding
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import kz.noxiq.chocoexpress.ui.utils.formatPrice
+import java.text.NumberFormat
 
 class MainActivity : DaggerAppCompatActivity() {
 

@@ -16,4 +16,16 @@ class LoginUseCase(private val authRepository: AuthRepository) {
             is Response.Error -> response
         }
     }
+
+    fun executeRegistration(email: String, password: String): Response<Unit, Exception> {
+        val response: Response<String, Exception> = authRepository.register(email, password)
+
+        return when (response) {
+            is Response.Success -> {
+                Response.Success(Unit)
+            }
+            is Response.Error -> response
+        }
+    }
+
 }

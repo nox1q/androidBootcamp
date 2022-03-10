@@ -18,6 +18,6 @@ class OrderMapper(
         orderStatus = orderEntity.orderStatus ?: DEFAULT_ORDER_STATUS,
         createdAt = orderEntity.createdAt.orEmpty(),
         restaurant = restaurantMapper.map(orderEntity.restaurantDataEntity),
-        orderDetailsList = orderEntity.orderDetailsList.map(orderDetailsMapper::map)
+        orderDetailsList = orderEntity.orderDetailsList?.map(orderDetailsMapper::map) ?: emptyList()
     )
 }

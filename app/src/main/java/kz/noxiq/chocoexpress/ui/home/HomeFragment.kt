@@ -12,6 +12,7 @@ import kz.noxiq.chocoexpress.R
 import kz.noxiq.chocoexpress.databinding.FragmentHomeBinding
 import kz.noxiq.chocoexpress.ui.utils.getDividerItemDecoration
 import kz.noxiq.chocoexpress.ui.utils.observe
+import kz.noxiq.chocoexpress.ui.utils.setVisibility
 import javax.inject.Inject
 
 class HomeFragment : DaggerFragment(R.layout.fragment_home) {
@@ -37,8 +38,8 @@ class HomeFragment : DaggerFragment(R.layout.fragment_home) {
     }
 
     private fun observeViewModel() {
-
         viewModel.getRestaurantsLiveData().observe(viewLifecycleOwner, restaurantAdapter::submitList)
+        viewModel.getIsLoadingRestaurants().observe(viewLifecycleOwner,binding.pbLoading::setVisibility)
     }
 
     private fun bindAdapter() {

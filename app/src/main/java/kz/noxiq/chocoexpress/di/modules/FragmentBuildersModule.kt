@@ -6,10 +6,11 @@ import kz.noxiq.chocoexpress.ui.home.HomeFragment
 import kz.noxiq.chocoexpress.ui.home.cart.CartFragment
 import kz.noxiq.chocoexpress.ui.home.menu.MenuFragment
 import kz.noxiq.chocoexpress.ui.home.menu_category_name.MenuCategoryNamesFragment
+import kz.noxiq.chocoexpress.ui.home.stash.StashFragment
 import kz.noxiq.chocoexpress.ui.orders.OrdersFragment
 import kz.noxiq.chocoexpress.ui.orders.order_details.OrderDetailsFragment
-import kz.noxiq.chocoexpress.ui.rahmet.LoginFragment
-import kz.noxiq.chocoexpress.ui.rahmet.RahmetFragment
+import kz.noxiq.chocoexpress.ui.login.LoginFragment
+import kz.noxiq.chocoexpress.ui.login.RahmetFragment
 import kz.noxiq.chocoexpress.ui.registration.EmailFragment
 import kz.noxiq.chocoexpress.ui.registration.PasswordFragment
 
@@ -46,5 +47,8 @@ abstract class FragmentBuildersModule {
 
     @ContributesAndroidInjector
     abstract fun contributesLoginFragment(): LoginFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributesStashFragment(): StashFragment
 
 }

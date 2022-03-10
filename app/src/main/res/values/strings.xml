@@ -31,4 +31,12 @@
     <string name="sign_in">Войти</string>
     <string name="enter_email_password">Введите почтовый адрес и пароль</string>
     <string name="create_account"><u>Создать аккаунт</u></string>
+    <string name="remove">-</string>
+    <string name="add">+</string>
+    <string name="status_0">В обработке</string>
+    <string name="status_1">На кухне</string>
+    <string name="status_2">Готов</string>
+    <string name="status_3">Завершен</string>
+    <string name="pay">Оплатить</string>
+    <string name="stash">Корзина</string>
 </resources>

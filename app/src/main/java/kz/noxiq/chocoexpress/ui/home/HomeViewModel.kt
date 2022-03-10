@@ -19,13 +19,17 @@ class HomeViewModel
 ) : ViewModel() {
 
     private val restaurantsLiveData = MutableLiveData<List<Restaurant>>()
+    private val isLoadingRestaurants = MutableLiveData<Boolean>()
+
     fun getRestaurantsLiveData(): LiveData<List<Restaurant>> = restaurantsLiveData
+    fun getIsLoadingRestaurants(): LiveData<Boolean> = isLoadingRestaurants
 
     init {
         loadRestaurants()
     }
 
     private fun loadRestaurants() {
+        isLoadingRestaurants.value = true
         viewModelScope.launch {
             val response: Response<List<Restaurant>, Exception> = withContext(Dispatchers.IO) {
                 restaurantRepository.getRestaurants()
@@ -34,6 +38,7 @@ class HomeViewModel
                 is Response.Success -> restaurantsLiveData.value = response.result
                 is Response.Error -> Unit
             }
+            isLoadingRestaurants.value = false
         }
     }
 }
