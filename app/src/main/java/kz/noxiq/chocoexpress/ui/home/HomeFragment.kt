@@ -5,10 +5,14 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.findNavController
 import dagger.android.support.DaggerFragment
 import kz.noxiq.chocoexpress.R
 import kz.noxiq.chocoexpress.databinding.FragmentHomeBinding
-import kz.noxiq.chocoexpress.observe
+import kz.noxiq.chocoexpress.ui.utils.getDividerItemDecoration
+import kz.noxiq.chocoexpress.ui.utils.observe
+import kz.noxiq.chocoexpress.ui.utils.setVisibility
 import javax.inject.Inject
 
 class HomeFragment : DaggerFragment(R.layout.fragment_home) {
@@ -34,17 +38,26 @@ class HomeFragment : DaggerFragment(R.layout.fragment_home) {
     }
 
     private fun observeViewModel() {
-
-        viewModel.getRestaurantsLiveData().observe(
-            viewLifecycleOwner,restaurantAdapter::submitList)
+        viewModel.getRestaurantsLiveData().observe(viewLifecycleOwner, restaurantAdapter::submitList)
+        viewModel.getIsLoadingRestaurants().observe(viewLifecycleOwner,binding.pbLoading::setVisibility)
     }
 
     private fun bindAdapter() {
         binding.recyclerView.adapter = restaurantAdapter
+        binding.recyclerView.addItemDecoration(
+            getDividerItemDecoration(
+                context = requireContext(),
+                R.dimen.dp_16,
+                R.dimen.dp_0,
+                R.dimen.dp_16,
+                R.dimen.dp_0
+            )
+        )
     }
 
     private fun navigateToRestaurantMenu(restaurantId: Long) {
-        // логика findNavController
-        Log.d("test", "test")
+        findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToMenu(restaurantId)
+        )
     }
 }

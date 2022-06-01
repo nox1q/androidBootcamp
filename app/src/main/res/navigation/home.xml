@@ -10,6 +10,16 @@
         android:name="kz.noxiq.chocoexpress.ui.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_menu"
+            app:destination="@id/menu">
+            <argument
+                android:name="restaurantId"
+                app:argType="long" />
+        </action>
     </fragment>
+
+    <include app:graph="@navigation/menu" />
 
 </navigation>
